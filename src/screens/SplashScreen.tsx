@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
 import { getAllTransactions } from '../services/db';
 import { useStore } from '../store/useStore';
-import { requestSmsPermission, startSmsListener, stopSmsListener } from '../services/smsReader';
+import { requestSmsPermission, startSmsListener } from '../services/smsReader';
 
 export default function SplashScreen({ navigation }: any) {
   useEffect(() => {

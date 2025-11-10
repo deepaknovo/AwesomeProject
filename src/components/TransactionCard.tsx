@@ -6,7 +6,7 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 type Transaction = {
   id: string;
   amount: number;
-  category: string;
+  category: any;
   type: 'credit' | 'expense';
   date: string;
   bank?: string;

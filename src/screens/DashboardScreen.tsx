@@ -130,7 +130,7 @@ export default function DashboardScreen({ navigation }: any) {
       {transactions.length > 0 ? (
         <FlatList
           data={transactions.slice(0, 5)}
-          renderItem={({ item }) => <TransactionCard t={item} />}
+          renderItem={({ item }:any) => <TransactionCard t={item} />}
           keyExtractor={(i) => i.id}
           scrollEnabled={false}
         />

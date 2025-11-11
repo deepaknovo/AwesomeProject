@@ -25,6 +25,9 @@ At runtime the app requests `READ_SMS`.
 ## Database
 - SQLite via `react-native-sqlite-storage`. Transactions stored in `transactions` table.
 
+## Biometric
+- Install  via `react-native-biometrics` AND `@react-native-async-storage/async-storage` 
+
 ## Limitations
 - **Android only** for SMS inbox reading. iOS cannot read SMS inbox.
 - Some bank message formats may vary and require additional regex tuning.

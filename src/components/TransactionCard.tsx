@@ -28,13 +28,13 @@ export default function TransactionCard({ t }: Props) {
        <Image 
         resizeMode='contain'
         style={{width:30,height:40}}
-        src={"https://media.istockphoto.com/id/1144366258/vector/green-arrow-pointing-up-direction-symbol-green-directional-arrow-sign-icon-flat-up-arrow.jpg?s=612x612&w=is&k=20&c=hPT4xmgkLynT_2Xgr5w_xE40eq6-HG7l53ljrssl-C0="} 
+        src={"https://static.vecteezy.com/system/resources/previews/017/177/785/non_2x/green-round-directional-arrow-on-transparent-background-free-png.png"} 
        />
        : 
        <Image 
-        resizeMode='contain'
+        resizeMode='center'
         style={{width:30,height:40}}
-        src={"https://www.shutterstock.com/image-illustration/arrow-down-glyph-rounded-icon-260nw-505147855.jpg"} 
+        src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg_5yigBPB5-2h6GfN5Pgb4cQdts-JikKRjg&s"} 
        />
         }
       </View>
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 12,
     borderRadius: 12,
-    marginVertical: 6,
+    margin: 6,
     elevation: 2,
     shadowColor: '#000',
     shadowOpacity: 0.1,

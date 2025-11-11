@@ -1,37 +1,31 @@
-import React, { useEffect } from 'react';
+// src/screens/SplashScreen.tsx (updated)
+import React, { useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
 import { getAllTransactions } from '../services/db';
 import { useStore } from '../store/useStore';
 import { requestSmsPermission, startSmsListener } from '../services/smsReader';
+import AuthGate from './AuthGate';
 
 export default function SplashScreen({ navigation }: any) {
+  const [ready, setReady] = useState(false);
+
   useEffect(() => {
-    let isMounted = true;
-
-    async function init() {
-      const list = await getAllTransactions();
-      if (isMounted) useStore.getState().setTransactions(list);
-
-      const hasSms = await requestSmsPermission();
-      if (hasSms && isMounted) {
-        console.log('📲 Initializing SMS listener...');
-        startSmsListener();
-      }
-
-      navigation.replace('Dashboard');
-    }
-
-    init();
-
-    return () => {
-      isMounted = false;
-    };
+    setTimeout(() => {
+        setReady(true)
+        navigation.replace('Onboarding')
+    }, 3000);
   }, []);
 
+  if (!ready) {
+    return (
+      <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
+        <Text style={{marginBottom:30,fontSize:24}}>Smart Expense Tracker</Text>
+        <ActivityIndicator size={'large'} />
+      </View>
+    );
+  }
+
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Smart Expense Tracker</Text>
-      <ActivityIndicator style={{ marginTop: 10 }} />
-    </View>
+    null
   );
 }

@@ -38,7 +38,7 @@ export default function DashboardScreen({ navigation }: any) {
   return (
     <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 60 }}>
       {/* HEADER */}
-      <Text style={styles.header}>Dashboard</Text>
+      {/* <Text style={styles.header}>Dashboard</Text> */}
 
       {/* SUMMARY CARDS */}
       <View style={styles.summaryRow}>
@@ -127,7 +127,9 @@ export default function DashboardScreen({ navigation }: any) {
   <Text style={{ color: 'white', fontWeight: 'bold' }}>View All</Text>
 </TouchableOpacity>
 </View>
+  <View style={{ margin: 5 }}>
       {transactions.length > 0 ? (
+      
         <FlatList
           data={transactions.slice(0, 5)}
           renderItem={({ item }:any) => <TransactionCard t={item} />}
@@ -138,7 +140,10 @@ export default function DashboardScreen({ navigation }: any) {
         <Text style={{ textAlign: 'center', color: '#999', marginTop: 10 }}>
           No transactions yet
         </Text>
-      )}
+        
+      )
+      }
+      </View>
     </ScrollView>
   );
 }
@@ -146,7 +151,7 @@ export default function DashboardScreen({ navigation }: any) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#fff',
     padding: 16,
   },
   header: {

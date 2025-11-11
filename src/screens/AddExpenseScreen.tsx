@@ -59,7 +59,9 @@ export default function AddExpenseScreen({ navigation }: any) {
                   value={values.amount}
                   onChangeText={handleChange('amount')}
                   style={styles.input}
-                  left={<TextInput.Icon icon="currency-inr" />}
+                  
+                  
+                  
                 />
                 <HelperText type="error" visible={touched.amount && !!errors.amount}>
                   {errors.amount}
@@ -72,7 +74,7 @@ export default function AddExpenseScreen({ navigation }: any) {
                   value={values.date}
                   onChangeText={handleChange('date')}
                   style={styles.input}
-                  left={<TextInput.Icon icon="calendar" />}
+                  
                 />
                 <HelperText type="error" visible={touched.date && !!errors.date}>
                   {errors.date}
@@ -109,7 +111,7 @@ export default function AddExpenseScreen({ navigation }: any) {
                   onChangeText={handleChange('notes')}
                   style={styles.input}
                   multiline
-                  left={<TextInput.Icon icon="note-text-outline" />}
+                  
                 />
 
                 {/* Submit Button */}
@@ -117,7 +119,7 @@ export default function AddExpenseScreen({ navigation }: any) {
                   mode="contained"
                   onPress={() => handleSubmit()}
                   style={styles.button}
-                  icon="plus-circle-outline"
+                  
                 >
                   Add Expense
                 </Button>
